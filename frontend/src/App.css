@@ -1,0 +1,172 @@
+:root {
+  --apple-bg: #F5F5F7;
+  --apple-surface: #FFFFFF;
+  --apple-surface-dark: #000000;
+  --apple-text-primary: #1D1D1F;
+  --apple-text-secondary: #86868B;
+  --apple-accent: #0071E3;
+  --apple-accent-hover: #0076DF;
+  --apple-link: #0066CC;
+  --apple-link-hover: #2997FF;
+  --apple-border: #D2D2D7;
+  --apple-border-light: rgba(0, 0, 0, 0.08);
+  --apple-radius-pill: 980px;
+  --apple-radius-card: 18px;
+  --apple-shadow-elevation: rgba(0, 0, 0, 0.08) 0px 8px 32px 0px, rgba(0, 0, 0, 0.04) 0px 2px 6px 0px;
+  --apple-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --apple-transition: 0.32s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--apple-font-sans);
+  background-color: var(--apple-bg);
+  color: var(--apple-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.apple-app-root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Minimal Focused Apple Auth Header (Replaced navigation bar) */
+.apple-auth-header {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 24px 20px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apple-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--apple-text-primary);
+  opacity: 0.9;
+  transition: opacity var(--apple-transition);
+}
+
+.apple-brand-mark:hover {
+  opacity: 1;
+}
+
+.apple-brand-title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+/* Segmented Switch Control */
+.apple-auth-switch {
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 3px;
+  border-radius: var(--apple-radius-pill);
+}
+
+.apple-switch-tab {
+  border: none;
+  background: transparent;
+  padding: 6px 16px;
+  border-radius: var(--apple-radius-pill);
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--apple-text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  transition: all var(--apple-transition);
+}
+
+.apple-switch-tab:hover {
+  color: var(--apple-text-primary);
+}
+
+.apple-switch-tab.active {
+  background-color: var(--apple-surface);
+  color: var(--apple-text-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Main Content Area */
+.apple-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px 48px;
+  width: 100%;
+}
+
+/* Global Footer */
+.apple-footer {
+  background-color: var(--apple-bg);
+  border-top: 1px solid var(--apple-border);
+  padding: 28px 20px 40px;
+  font-size: 12px;
+  color: var(--apple-text-secondary);
+  line-height: 1.6;
+}
+
+.apple-footer-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.apple-footer-legal-text {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--apple-border-light);
+  margin-bottom: 14px;
+}
+
+.apple-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.apple-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.apple-footer-links a {
+  color: var(--apple-text-primary);
+  text-decoration: none;
+  transition: color var(--apple-transition);
+}
+
+.apple-footer-links a:hover {
+  text-decoration: underline;
+  color: var(--apple-link);
+}
+
+@media (max-width: 600px) {
+  .apple-auth-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .apple-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
